@@ -1,8 +1,8 @@
 const express = require('express');
-const port = 7040;
+const port = 7030;
 const cors = require('cors');
 const app = express();
-const ejs = require('ejs');
+// const ejs = require('ejs');
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 
@@ -14,7 +14,7 @@ app.use(expressLayouts);
 app.set('view engine', 'ejs');
 app.set('views', './views');
 //use cors module
-app.use(cors());
+// app.use(cors());
 app.use('/', require('./routes'));
 //listen to server
 app.listen(port, (err) => {

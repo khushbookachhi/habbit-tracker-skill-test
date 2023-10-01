@@ -13,7 +13,7 @@ const Month = [
   'Nov',
   'Dec',
 ];
-//controller for habitspage
+//controller for habitspage for dashboard view
 module.exports.habitsPage = (req, res) => {
   Habit.find({}, (err, habits) => {
     return res.render('dashboard', {
@@ -48,7 +48,7 @@ module.exports.create = (req, res) => {
 //action for deleting habit
 module.exports.delete = (req, res) => {
   let id = req.params.id;
-  Habit.findByIdAndDelete(id, function (err, habit) {
+  Habit.findByIdAndDelete(id, function (err) {
     if (err) {
       console.log('error in deleting from database');
       return res.redirect('back');
